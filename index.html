@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESCRIBE VERDE - Escribe el cambio página por página</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #27ae60;
+            --forest-green: #1e8449;
+            --light-green: #a8e6cf;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--primary-green);
+            padding: 0.5rem 2rem;
+            /* Reduce el padding vertical si es necesario */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-image {
+            max-height: 90px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--forest-green);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(39, 174, 96, 0.85), rgba(39, 174, 96, 0.85)), url('/img/Escribe.png');
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-size: contain;
+            /* Ajusta la imagen dentro del contenedor */
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Evita que se repita la imagen si no cubre todo el área */
+        }
+
+
+
+        .slogan {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .impact-areas {
+            background-color: #f4f6f7;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .impact-card {
+            background-color: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, opacity 1s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .impact-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav>
+            <div class="logo">
+                <img src="img/2.png" alt="Reescribe Verde Logo" class="logo-image">
+            </div>
+            <ul>
+                <li><a href="#inicio"><Strong>Inicio</Strong></a></li>
+                <li><a href="#proceso"><strong>Proceso</strong></a></li>
+                <li><a href="#logistica"><Strong>Logistica</Strong></a></li>
+                <li><a href="#modelo"><strong>Modelo</strong></a></li>
+                <li><a href="#contacto"><strong>Contacto</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">RESCRIBE VERDE</h1>
+            <p><strong>Transformamos residuos de papel en recursos valiosos, impulsando una economía circular que
+                    beneficia a
+                    nuestro territorio y protege el medio ambiente.</strong></p>
+        </div>
+        <div class="slogan"><strong>"Escribe el cambio página por página"</strong></div>
+    </section>
+
+    <section class="impact-areas" id="impacto">
+        <div class="impact-grid">
+            <div class="impact-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sostenibilidad Ambiental</h3>
+                <p>Reducimos la deforestación y minimizamos residuos mediante un proceso de reciclaje innovador.</p>
+            </div>
+            <div class="impact-card">
+                <i class="fas fa-recycle"></i>
+                <h3>Economía Circular</h3>
+                <p>Convertimos el papel usado en un recurso valioso, cerrando el ciclo de producción y consumo.</p>
+            </div>
+            <div class="impact-card">
+                <i class="fas fa-users"></i>
+                <h3>Desarrollo Comunitario</h3>
+                <p>Generamos oportunidades económicas y educativas para la comunidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <strong>2024 REESCRIBE VERDE - Transformando Territorios, Preservando el Planeta</strong></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let lastScrollTop = 0;
+            const header = document.getElementById('main-header');
+
+            // Mostrar/ocultar header en función del scroll
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    header.classList.add('hidden');
+                } else {
+                    header.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // Intersection Observer para animaciones al entrar en vista
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const elementsToAnimate = document.querySelectorAll('.hero-content, .impact-card');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
