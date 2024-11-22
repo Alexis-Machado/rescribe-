@@ -1,0 +1,141 @@
+<section class="products" id="productos">
+    <div class="container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-description">En <strong>Rescribe Verde</strong>, ofrecemos soluciones sostenibles para tus necesidades de papelería, impulsando el cuidado del medio ambiente y la economía circular.</p>
+        <div class="product-grid">
+            <!-- Producto Estrella -->
+            <div class="product-card">
+                <div class="card-header">
+                    <img src="img/rescribe-verde.jpg" alt="RESCRIBE VERDE" class="product-image">
+                </div>
+                <div class="card-body">
+                    <h3>RESCRIBE VERDE</h3>
+                    <p>Nuestro producto estrella: un cuaderno ecológico, diseñado para combinar funcionalidad y sostenibilidad. Ideal para estudiantes, profesionales y cualquier persona que busque una alternativa consciente con el medio ambiente.</p>
+                    <button class="btn" onclick="viewMore('RESCRIBE VERDE')">Ver Más</button>
+                </div>
+            </div>
+            
+            <!-- Agendas -->
+            <div class="product-card">
+                <div class="card-header">
+                    <img src="img/agendas.jpg" alt="Agendas" class="product-image">
+                </div>
+                <div class="card-body">
+                    <h3>Agendas</h3>
+                    <p>Elegantes agendas hechas de papel reciclado, diseñadas para combinar funcionalidad y sostenibilidad. Perfectas para uso personal o corporativo.</p>
+                    <button class="btn" onclick="viewMore('Agendas')">Ver Más</button>
+                </div>
+            </div>
+            
+            <!-- Libretas -->
+            <div class="product-card">
+                <div class="card-header">
+                    <img src="img/libretas.jpg" alt="Libretas" class="product-image">
+                </div>
+                <div class="card-body">
+                    <h3>Libretas</h3>
+                    <p>Libretas prácticas y ecológicas para estudiantes, profesionales y empresas. Fabricadas con materiales reciclados que preservan el medio ambiente.</p>
+                    <button class="btn" onclick="viewMore('Libretas')">Ver Más</button>
+                </div>
+            </div>
+            
+            <!-- REXMAX -->
+            <div class="product-card">
+                <div class="card-header">
+                    <img src="img/rexmax.jpg" alt="REXMAX" class="product-image">
+                </div>
+                <div class="card-body">
+                    <h3>REXMAX</h3>
+                    <p>Un innovador producto para maximizar la reutilización de papel en oficinas y hogares. Diseñado para reducir aún más el desperdicio y promover el reciclaje activo.</p>
+                    <button class="btn" onclick="viewMore('REXMAX')">Ver Más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Productos */
+    .products {
+        padding: 4rem 2rem;
+        background: linear-gradient(to bottom, #f9f9f9, #e8f5e9);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+    }
+
+    .section-description {
+        font-size: 1.2rem;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        overflow: hidden;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.4s;
+    }
+
+    .product-card:hover .product-image {
+        transform: scale(1.1);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+        background-color: var(--forest-green);
+        transform: translateY(-3px);
+    }
+</style>
+
+<script>
+    function viewMore(productName) {
+        alert(`Más información sobre ${productName} próximamente.`);
+        // Puedes reemplazar este alert con un enlace dinámico o un modal.
+    }
+</script>
