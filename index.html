@@ -7,7 +7,6 @@
     <title>RESCRIBE VERDE - Escribe el cambio página por página</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Estilos generales */
         :root {
             --primary-green: #2ecc71;
             --dark-green: #27ae60;
@@ -33,7 +32,6 @@
         header {
             background-color: var(--primary-green);
             padding: 0.5rem 2rem;
-            /* Reduce el padding vertical si es necesario */
             position: fixed;
             width: 100%;
             top: 0;
@@ -55,7 +53,7 @@
         }
 
         .logo-image {
-            max-height: 90px;
+            max-height: 60px;
             width: auto;
         }
 
@@ -86,14 +84,10 @@
             align-items: center;
             text-align: center;
             color: white;
-            background-size: contain;
-            /* Ajusta la imagen dentro del contenedor */
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* Evita que se repita la imagen si no cubre todo el área */
         }
-
-
 
         .slogan {
             background-color: rgba(255, 255, 255, 0.2);
@@ -149,7 +143,41 @@
             padding: 3rem 2rem;
             text-align: center;
         }
-        
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: block;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            .hero {
+                background-size: cover;
+                height: 80vh;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slogan {
+                font-size: 0.9rem;
+            }
+
+            .impact-card {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -160,9 +188,9 @@
                 <img src="img/2.png" alt="Reescribe Verde Logo" class="logo-image">
             </div>
             <ul>
-                <li><a href="#inicio"><Strong>Inicio</Strong></a></li>
+                <li><a href="#inicio"><strong>Inicio</strong></a></li>
                 <li><a href="#proceso"><strong>Proceso</strong></a></li>
-                <li><a href="#logistica"><Strong>Logistica</Strong></a></li>
+                <li><a href="#logistica"><strong>Logística</strong></a></li>
                 <li><a href="#modelo"><strong>Modelo</strong></a></li>
                 <li><a href="#contacto"><strong>Contacto</strong></a></li>
             </ul>
@@ -172,9 +200,7 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1 class="hero-title">RESCRIBE VERDE</h1>
-            <p><strong>Transformamos residuos de papel en recursos valiosos, impulsando una economía circular que
-                    beneficia a
-                    nuestro territorio y protege el medio ambiente.</strong></p>
+            <p><strong>Transformamos residuos de papel en recursos valiosos, impulsando una economía circular que beneficia nuestro territorio y protege el medio ambiente.</strong></p>
         </div>
         <div class="slogan"><strong>"Escribe el cambio página por página"</strong></div>
     </section>
@@ -208,7 +234,6 @@
             let lastScrollTop = 0;
             const header = document.getElementById('main-header');
 
-            // Mostrar/ocultar header en función del scroll
             window.addEventListener('scroll', () => {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 if (scrollTop > lastScrollTop) {
@@ -219,7 +244,6 @@
                 lastScrollTop = scrollTop;
             });
 
-            // Intersection Observer para animaciones al entrar en vista
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
